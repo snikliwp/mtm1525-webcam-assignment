@@ -16,7 +16,9 @@ package{
 	import flash.geom.Rectangle;
 	
 	import flash.utils.Timer;
-	
+	import flash.system.Security;
+	import flash.system.SecurityPanel;
+	import flash.media.Camera;
 	import flash.events.TimerEvent;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -34,7 +36,12 @@ package{
 		
 		public function WebcamCaptureMask(){
 			imgFilter_mc.visible = false;
+			// Security.showSettings(SecurityPanel.CAMERA);
+			// Security.showSettings(SecurityPanel.MICROPHONE);
+			 Security.showSettings(SecurityPanel.PRIVACY);
 			camera = Camera.getCamera();
+			trace(Camera.names.length);
+			trace(Camera.names[0]);
 			camera.setMode(640, 480, this.stage.frameRate);
 			camera.setMotionLevel(10, 1500);	
 			if(camera != null){
