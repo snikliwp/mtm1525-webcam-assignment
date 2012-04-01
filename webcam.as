@@ -34,14 +34,14 @@ trace('In function webcam: ');
 			// constructor code
 			clock_mc.visible = false;
 //			imgFilter_mc.visible = false;
-			// Security.showSettings(SecurityPanel.CAMERA);
+			 Security.showSettings(SecurityPanel.CAMERA);
 			// Security.showSettings(SecurityPanel.MICROPHONE);
 			// Security.showSettings(SecurityPanel.PRIVACY);
-//			camera = Camera.getCamera();
+			camera = Camera.getCamera();
 //			trace(Camera.names.length);
 //			trace(Camera.names[0]);
-//			camera.setMode(640, 480, this.stage.frameRate);
-//			camera.setMotionLevel(10, 1500);	
+			camera.setMode(640, 480, this.stage.frameRate);
+			camera.setMotionLevel(10, 1500);	
 			if(camera != null){
 				myVideo.attachCamera(camera);
 	//			takePic_btn.addEventListener(MouseEvent.CLICK, capture);
